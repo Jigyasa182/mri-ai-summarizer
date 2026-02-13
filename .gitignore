@@ -18,3 +18,9 @@ build/
 # Project specific
 backend/.env
 frontend/dist/
+
+# dependencies
+node_modules/
+backend/node_modules/
+
+
