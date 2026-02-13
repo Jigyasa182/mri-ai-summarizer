@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../api/api';
 import { Eye, Trash2, FileText, Loader2 } from 'lucide-react';
 import SummaryCard from '../components/SummaryCard';
 
@@ -20,7 +20,7 @@ const History = ({ initialReport }) => {
 
     const fetchHistory = async () => {
         try {
-            const response = await axios.get('/api/report/history');
+            const response = await api.get('/api/report/history');
             setReports(response.data);
         } catch (error) {
             console.error('Failed to fetch history:', error);
@@ -32,7 +32,7 @@ const History = ({ initialReport }) => {
     const deleteReport = async (id) => {
         if (!window.confirm("Are you sure you want to delete this report?")) return;
         try {
-            await axios.delete(`/api/report/${id}`);
+            await api.delete(`/api/report/${id}`);
             setReports(reports.filter(r => r._id !== id));
             if (selectedReport?._id === id) setSelectedReport(null);
         } catch (err) {

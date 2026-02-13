@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/api';
 import { Send, AlertCircle, Info, Loader2 } from 'lucide-react';
 
 const ReportForm = ({ onAnalysisComplete }) => {
@@ -17,7 +17,7 @@ const ReportForm = ({ onAnalysisComplete }) => {
         setError(null);
 
         try {
-            const response = await axios.post('/api/report/analyze', {
+            const response = await api.post('/api/report/analyze', {
                 reportText,
                 age: age ? parseInt(age) : null,
                 bodyPart,
