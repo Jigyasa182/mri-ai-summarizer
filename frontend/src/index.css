@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0B0E14] text-slate-100 font-sans selection:bg-cyan-500/30;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-[#1C2128] text-slate-300 hover:text-white border border-slate-700 hover:border-slate-500 font-semibold py-3 px-6 rounded-xl transition-all flex items-center justify-center gap-2;
+  }
+
+  .glass-card {
+    @apply bg-[#1C2128]/80 backdrop-blur-xl border border-slate-800 shadow-2xl rounded-2xl;
+  }
+
+  .input-field {
+    @apply w-full bg-[#2D333B] border border-slate-700 text-slate-100 px-4 py-3 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 outline-none transition-all placeholder:text-slate-500;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 font-extrabold;
+}
+
+.medical-grid {
+  background-image: radial-gradient(#1e293b 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#0B0E14];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full border-2 border-[#0B0E14] hover:bg-slate-700;
+}

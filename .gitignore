@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+# Project specific
+backend/.env
+frontend/dist/
