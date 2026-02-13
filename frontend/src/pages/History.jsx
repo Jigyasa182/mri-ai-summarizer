@@ -3,14 +3,20 @@ import axios from 'axios';
 import { Eye, Trash2, FileText, Loader2 } from 'lucide-react';
 import SummaryCard from '../components/SummaryCard';
 
-const History = () => {
+const History = ({ initialReport }) => {
     const [reports, setReports] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [selectedReport, setSelectedReport] = useState(null);
+    const [selectedReport, setSelectedReport] = useState(initialReport || null);
 
     useEffect(() => {
         fetchHistory();
     }, []);
+
+    useEffect(() => {
+        if (initialReport) {
+            setSelectedReport(initialReport);
+        }
+    }, [initialReport]);
 
     const fetchHistory = async () => {
         try {
